@@ -1,6 +1,6 @@
 //File Name: assign2_gma23.cpp
 //Author: Gentry Atkinson
-//Date: 1/23/2019
+//Date: 2/11/2019
 //Assignment Number: 1
 //CS 1428.253 Spring 2019
 //Instructor: Jill Seaman
