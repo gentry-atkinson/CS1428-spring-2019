@@ -1,7 +1,7 @@
 //File Name: assign2_gma23.cpp
 //Author: Gentry Atkinson
 //Date: 2/11/2019
-//Assignment Number: 1
+//Assignment Number: 2
 //CS 1428.253 Spring 2019
 //Instructor: Jill Seaman
 //Description: This macronutrient calculator takes an input from the user
@@ -18,9 +18,9 @@ int main(){
   float carb;                   //grams of carbs
   float protein;                //grams of protein
   float totalCalories;          //the total input grams of nutrients
-  const float CPG_Carb = 4.0;    //calories per gram for carbs
-  const float CPG_Fat = 9.0;     //calories per gram for fat
-  const float CPG_Protein = 4.0; //calories per gram for protein
+  const float CPG_CARB = 4.0;    //calories per gram for carbs
+  const float CPG_FAT = 9.0;     //calories per gram for fat
+  const float CPG_PROTEIN = 4.0; //calories per gram for protein
 
   //Input from user: grams of carbs, fat, then protein
   cout << "Please enter the amount of carbohydrate in grams: ";
@@ -31,7 +31,7 @@ int main(){
   cin >> protein;
 
   //Calculate total calories
-  totalCalories = (CPG_Carb*carb) + (CPG_Fat*fat) + (CPG_Protein*protein);
+  totalCalories = (CPG_CARB*carb) + (CPG_FAT*fat) + (CPG_PROTEIN*protein);
 
   //Output values
   cout << endl;
