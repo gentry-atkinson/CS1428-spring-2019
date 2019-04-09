@@ -27,27 +27,34 @@ int main() {
     float deathRate; //the rate of death
     int years; //the years to track the pop
 
+
+
     getInput(popSize, birthRate, deathRate, years);
     outputTable(popSize, birthRate, deathRate, years);
     return 0;
 }
 
 void getInput (int& popSize, float& birthRate, float& deathRate, int& years){
+    const int MIN_POP = 100;
+    const int MAX_POP = 1000000;
+    const float MIN_RATE = 0.0;
+    const float MAX_RATE = 100.0;
+
     do{
         cout << "Enter the initial population (between 100 and 1,000,000): ";
         cin >> popSize;
-    }while (popSize < 100 || popSize > 1000000);
+    }while (popSize < MIN_POP || popSize > MAX_POP);
 
     do{
         cout << "Enter the annual birth rate (between 0 and 100): ";
         cin >> birthRate;
-    }while (birthRate < 0 || birthRate > 100);
+    }while (birthRate < MIN_RATE || birthRate > MAX_RATE);
     birthRate /= 100;
 
     do{
         cout << "Enter the annual death rate (between 0 and 100): ";
         cin >> deathRate;
-    }while (deathRate < 0 || deathRate > 100);
+    }while (deathRate < MIN_RATE || deathRate > MAX_RATE);
     deathRate /= 100;
 
     do{
@@ -59,7 +66,7 @@ void getInput (int& popSize, float& birthRate, float& deathRate, int& years){
 }
 
 float calculatePop (int P, float B, float D){
-    return floor(P + (B * P) - (D * P));
+    return static_cast<int>(P + (B * P) - (D * P));
 }
 
 int yearsToDouble (float r){
@@ -71,9 +78,9 @@ int yearsToZero (int P, float r){
 }
 
 void outputTable (int initPop, float birthRate, float deathRate, int years){
-    cout << "Year                 Population" << endl;
+    cout << "Year          Population" << endl;
     float localPop = initPop;
-    cout << "----  -------------------------" << endl;
+    cout << "----  ------------------" << endl;
     for (int i = 0; i <= years; i++){
         cout << right << setw(4) << i << setw(20) << localPop << endl;
         localPop = calculatePop(localPop, birthRate, deathRate);
