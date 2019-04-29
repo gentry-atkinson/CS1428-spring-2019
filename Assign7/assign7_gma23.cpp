@@ -1,3 +1,13 @@
+//File Name: assign7_gma23.cpp
+//Author: Gentry Atkinson
+//Date: 4/30/2019
+//Assignment Number: 7
+//CS 1428.253 Spring 2019
+//Instructor: Jill Seaman
+//This program will compute the final average and letter grade for a roster of 5
+//  students, calculate the class average, and find the student with the highest
+//  final grade.
+
 #include <iostream>
 #include <iomanip>
 #include <string>
@@ -33,7 +43,12 @@ int main(){
 
     return 0;
 }
-
+//***********************************************************
+// calculateAvg: takes input from user and stores it in the students array after
+//  calculating the final avg and letter
+// students: an array of Students representing the class
+// returns: none
+//***********************************************************
 void calculateAvg(Student students[]){
     cout << "Enter the midterm and final exam score for each student: " << endl;
     for (int i = 0; i < NUM_STUDENTS; ++i){
@@ -54,6 +69,11 @@ void calculateAvg(Student students[]){
     }
 }
 
+//***********************************************************
+// calcClassAvg: computes the avg for the total class
+// students: an array of Students representing the class
+// returns: the class avg
+//***********************************************************
 float calcClassAvg(Student students[]){
     float total = 0;
     for (int i = 0; i < NUM_STUDENTS; ++i)
@@ -61,6 +81,11 @@ float calcClassAvg(Student students[]){
     return total/NUM_STUDENTS;
 }
 
+//***********************************************************
+// findHighest: finds the student with the highest final avg
+// students: an array of Students representing the class
+// returns: the index of the highest student in students
+//***********************************************************
 int findHighest(Student students[]){
     int best = 0;
     for (int i = 1; i < NUM_STUDENTS; ++i){
@@ -70,6 +95,12 @@ int findHighest(Student students[]){
     return best;
 }
 
+//***********************************************************
+// showData: prints a formatted table of student grades, the class avg, and
+//  the grade of the highest student.
+// students: an array of Students representing the class
+// returns: none
+//***********************************************************
 void showData(Student students[]){
     cout << "Class Roster:" << endl;
     cout << fixed << setprecision(1);
