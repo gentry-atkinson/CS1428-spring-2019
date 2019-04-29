@@ -47,6 +47,10 @@ void calculateAvg(Student students[]){
             students[i].letterGrade = 'B';
         else
             students[i].letterGrade = 'C';
+        if (m>100 || f>100){
+            i -= 1;
+            cout << "Grades should not be greater than 100." << endl;
+        }
     }
 }
 
